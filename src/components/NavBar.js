@@ -2,41 +2,61 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { SocialIcon } from "react-social-icons";
 export default function NavBar() {
+  const [navbarOpen, setNavbarOpen] = React.useState(false);
   return (
     <header className="bg-red-600">
-      <div className="container mx-auto flex justify-between">
-        <nav className="flex">
+      <div className="container mx-auto flex justify-between lg:w-auto">
+        <nav className="flex flex-col lg:inline-flex lg:flex-row ">
           <NavLink
             to="/"
             exact
             activeClassName="text-white"
-            className="inline-flex items-center py-3 px-3 mr-4 text-red-100 hover:text-green-800 text-4xl font-bold cursive tracking-widest"
+            className="lg:inline-flex items-center mr-4 p-4 text-red-100 hover:text-green-800 text-4xl font-bold cursive tracking-widest"
           >
             Crooked Codes
           </NavLink>
-          <NavLink
-            to="/post"
-            activeClassName="text-red-100 bg-red-700"
-            className="inline-flex items-center py-3 px-3 my-6 rounded text-red-200 hover:text-green-800 "
+          <div
+            className={
+              "flex flex-col lg:inline-flex lg:flex-row " +
+              (navbarOpen ? "flex" : "hidden")
+            }
           >
-            Blog Posts
-          </NavLink>
-          <NavLink
-            to="/project"
-            activeClassName="text-red-100 bg-red-700"
-            className="inline-flex items-center py-3 px-3 my-6 rounded text-red-200 hover:text-green-800 "
-          >
-            Projects
-          </NavLink>
-          <NavLink
-            to="/about"
-            activeClassName="text-red-100 bg-red-700"
-            className="inline-flex items-center py-3 px-3 my-6 rounded text-red-200 hover:text-green-800 "
-          >
-            About Me
-          </NavLink>
+            <NavLink
+              to="/post"
+              activeClassName="text-red-100 lg:bg-red-700"
+              className="lg:inline-flex items-center py-1 px-2 lg:py-3 lg:px-3 my-6 rounded text-red-200 hover:text-green-800 "
+              onClick={() => setNavbarOpen(!navbarOpen)}
+            >
+              Blog Posts
+            </NavLink>
+            <NavLink
+              to="/project"
+              activeClassName="text-red-100 lg:bg-red-700"
+              className="lg:inline-flex items-center  py-1 px-2 lg:py-3 lg:px-3 my-6 rounded text-red-200 hover:text-green-800 "
+              onClick={() => setNavbarOpen(!navbarOpen)}
+            >
+              Projects
+            </NavLink>
+            <NavLink
+              to="/about"
+              activeClassName="text-red-100 lg:bg-red-700"
+              className="lg:inline-flex items-center py-1 px-2 lg:py-3 lg:px-3 my-6 rounded text-red-200 hover:text-green-800 "
+              onClick={() => setNavbarOpen(!navbarOpen)}
+            >
+              About Me
+            </NavLink>
+          </div>
         </nav>
-        <div className="inline-flex py-3 px-3 my-6">
+        <button
+          onClick={() => setNavbarOpen(!navbarOpen)}
+          className="text-white inline-flex p-6 hover:gb-gray-300 rounded lg:hidden ml-auto"
+        >
+          <img
+            src="https://img.icons8.com/material-outlined/24/ffffff/menu--v1.png"
+            alt="menu icon"
+          />
+        </button>
+        <div className="hidden lg:inline-flex py-3 px-3 my-6">
           <SocialIcon
             url="https://github.com/abylinjohnson"
             className="mr-4 "
