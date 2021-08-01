@@ -12,6 +12,7 @@ export default function NavBar() {
             exact
             activeClassName="text-white"
             className="lg:inline-flex items-center mr-4 p-4 text-red-100 hover:text-green-800 text-4xl font-bold cursive tracking-widest"
+            onClick={() => setNavbarOpen(!navbarOpen)}
           >
             Crooked Codes
           </NavLink>
@@ -24,7 +25,7 @@ export default function NavBar() {
             <NavLink
               to="/post"
               activeClassName="text-red-100 lg:bg-red-700"
-              className="lg:inline-flex items-center py-1 px-2 lg:py-3 lg:px-3 my-6 rounded text-red-200 hover:text-green-800 "
+              className="lg:inline-flex items-center py-1 px-10 lg:py-3 lg:px-3 my-6 rounded text-red-200 hover:text-green-800 "
               onClick={() => setNavbarOpen(!navbarOpen)}
             >
               Blog Posts
@@ -32,7 +33,7 @@ export default function NavBar() {
             <NavLink
               to="/project"
               activeClassName="text-red-100 lg:bg-red-700"
-              className="lg:inline-flex items-center  py-1 px-2 lg:py-3 lg:px-3 my-6 rounded text-red-200 hover:text-green-800 "
+              className="lg:inline-flex items-center  py-1 px-10 lg:py-3 lg:px-3 my-6 rounded text-red-200 hover:text-green-800 "
               onClick={() => setNavbarOpen(!navbarOpen)}
             >
               Projects
@@ -40,7 +41,7 @@ export default function NavBar() {
             <NavLink
               to="/about"
               activeClassName="text-red-100 lg:bg-red-700"
-              className="lg:inline-flex items-center py-1 px-2 lg:py-3 lg:px-3 my-6 rounded text-red-200 hover:text-green-800 "
+              className="lg:inline-flex items-center py-1 px-10 lg:py-3 lg:px-3 my-6 rounded text-red-200 hover:text-green-800 "
               onClick={() => setNavbarOpen(!navbarOpen)}
             >
               About Me
